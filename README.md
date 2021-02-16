@@ -8,7 +8,6 @@ _매일 **Pull Requests** 갱신_
 ----------
 ### HTML Tag Document
 
-
 ##### - whatwg   
 https://html.spec.whatwg.org/multipage/   
 html tag가 정리되어 있는 사이트
@@ -29,8 +28,7 @@ python 과 같은 인터프리터 언어도 이 환경에 해당 됨
 
 2021-02-16
 ----------
-### JS Learn Basic
-
+### Learn JS Basic
 
 ##### - console.log() 출력에 대한 잘못된 생각   
 1. html script태그를 이용하여 console에 로그를 출력한다.   
@@ -40,3 +38,22 @@ python 과 같은 인터프리터 언어도 이 환경에 해당 됨
 
 그 이유는 콘솔에 텍스트를 출력하면 변경되지 않겠지만, Element대상이 직접 연결되어 있기 때문에 변경 된 값이 출력된다.   
 _(web3.html 코드 참고)_   
+
+### Java Programming   
+_Eclipse Java EE Install_
+   
+#### - Eclipse Setting   
+Eclipse > Window > Preferences > Search 'Encoding'   
+MS949 -> UTF-8
+
+#### - Java Module
+여러 프로젝트를 통합하는 개념
+> **인터넷 조사내용**   
+> Field + Method + Constructor + Inner Class = Class   
+> Class + ... + Class = Package   
+> Package + ... + Package = Module   
+
+#### - ClassNotFoundException 
+1. Eclipse > Project > Clean   
+2. Eclipse > Project > Check 'Build Automatically'
+
