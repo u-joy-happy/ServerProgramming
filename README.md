@@ -58,7 +58,7 @@ MS949 -> UTF-8
       1. jdk.java.net/15/ 접속
       2. OS에 맞는 파일 설치
    
-#### - Eclopse-Shortcut 
+#### - Eclipse-Shortcut 
 Ctrl+/ or Ctrl+Shift+C : 한줄 주석   
 Ctrl+Shift+/ : 부분(여러줄) 주석   
 Ctrl+Shift+\ : 부분(여러줄) 주석 해제   
