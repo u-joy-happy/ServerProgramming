@@ -1,5 +1,5 @@
 # ServerProgramming
-KOSTA Education ServerProgramming
+KOSTA Education :ServerProgramming
 
 <br>
 
@@ -38,4 +38,4 @@ python 과 같은 인터프리터 언어도 이 환경에 해당 됨
 4. 로그를 출력한 이후에 변경된 값이 출력된다.   
 
 그 이유는 콘솔에 텍스트를 출력하면 변경되지 않겠지만, Element대상이 직접 연결되어 있기 때문에 변경 된 값이 출력된다.   
-(web3.html 코드 참고)   
+_(web3.html 코드 참고)_   
