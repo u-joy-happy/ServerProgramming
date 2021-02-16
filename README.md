@@ -53,7 +53,19 @@ MS949 -> UTF-8
 > Class + ... + Class = Package   
 > Package + ... + Package = Module   
 
-#### - ClassNotFoundException 
-1. Eclipse > Project > Clean   
-2. Eclipse > Project > Check 'Build Automatically'
+#### - 예상못한 에러 정리
+- ClassNotFoundException  
+      1. Eclipse > Project > Clean   
+      2. Eclipse > Project > Check 'Build Automatically'
 
+- JDK download    
+      1. jdk.java.net/15/ 접속
+      2. OS에 맞는 파일 설치
+   
+#### - Eclopse-Shortcut 
+Ctrl+/ or Ctrl+Shift+C : 한줄 주석   
+Ctrl+Shift+/ : 부분(여러줄) 주석   
+Ctrl+Shift+\ : 부분(여러줄) 주석 해제   
+Ctrl+M : 화면 키우기   
+Ctrl+Y : Re-do (Ctrl+Z 반대)   
+Alt+방향키 : 줄 이동   
