@@ -65,3 +65,41 @@ Ctrl+Shift+\ : 부분(여러줄) 주석 해제
 Ctrl+M : 화면 키우기   
 Ctrl+Y : Re-do (Ctrl+Z 반대)   
 Alt+방향키 : 줄 이동   
+<br>
+<br>
+
+2021-02-17
+----------
+### Java Programming 
+#### - Eclipse-Shortcut
+command+shift+x : 대문자 변환   
+command+shift+y : 소문자 변환    
+
+#### - Char Data Type
+single quotation(' ') 은 1개의 문자(char)만 허용(공백불가)   
+
+#### - Wrapper Class
+다양한 정보 또는 명령을 수행할 수 있다   
+문자를 **숫자로 변경**하거나 **최소값/최대값** 확인 가능   
+> (WrapperClass).MIN_VALUE : 숫자 타입 값의 최소값을 확인   
+> (WrapperClass).MAX_VALUE : 숫자 타입 값의 최대값을 확인   
+> ex) Byte.MIN_VALUE/Byte.MAX_VALUE   
+
+#### - Variable : 무엇을 변수로 만들어야 하는지에 대한 방법
+소프트웨어에는 여러 기능(동작)들이 존재   
+기능들은 특징이 존재하고, 그 특징을 변수로 지정   
+즉, 특정 **대상의 속성**을 표현하는 명사를 변수로 지정   
+_예를 들어 게시판 프로그램을 작성할 경우 : 제목, 내용, 작성자, 날짜 등 변수로 지정_   
+
+#### - java.io를 이용하여 값을 받는 법
+import java.io.BufferedReader;   
+import java.io.InputStreamReader;   
+
+BufferedReader br = new BufferedReader(new InputStreamReader(System.in));   
+br.readLine(); // IOException 발생
+
+#### - 열거 연산자 : ...
+function(int...num){}  
+int타입의 값을 여러 개 받을 수 있다
+
+
