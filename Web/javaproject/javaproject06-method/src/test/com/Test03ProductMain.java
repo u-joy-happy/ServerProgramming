@@ -57,19 +57,19 @@ public class Test03ProductMain {
 		
 		Test03ProductVO vo = p.select();
 		System.out.println("select 결과 ");
-		System.out.println("제품 번호 : " + vo.pNum);
-		System.out.println("제품 이름 : " + vo.pName);
-		System.out.println("제품 가격 : " + vo.price);
-		System.out.println("제조일자 : " + vo.mdate);
+		System.out.println("제품 번호 : " + vo.getpNum());
+		System.out.println("제품 이름 : " + vo.getpName());
+		System.out.println("제품 가격 : " + vo.getPrice());
+		System.out.println("제조일자 : " + vo.getMdate());
 		System.out.println();
 		
 		Test03ProductVO[] vos = p.selectAll();
 		System.out.println("selectAll 결과 ");
 		for(Test03ProductVO voss : vos) {
-			System.out.print("제품번호:" + voss.pNum + "  ");
-			System.out.print("제품이름:" + voss.pName + "  ");
-			System.out.print("제품가격:" + voss.price + "  ");
-			System.out.println("제조일자:" + voss.mdate);
+			System.out.print("제품번호:" + voss.getpNum() + "  ");
+			System.out.print("제품이름:" + voss.getpName() + "  ");
+			System.out.print("제품가격:" + voss.getPrice() + "  ");
+			System.out.println("제조일자:" + voss.getMdate());
 		}
 		System.out.println();
 		

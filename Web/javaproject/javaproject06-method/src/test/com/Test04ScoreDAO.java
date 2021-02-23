@@ -3,59 +3,72 @@ package test.com;
 public class Test04ScoreDAO {
 
 	public Test04ScoreDAO() {
-		// TODO Auto-generated constructor stub
+
 	}
-	
+
 	public int insert(Test04ScoreVO vo) {
 		System.out.println("int insert(Test04ScoreVO vo) ------------");
 		return 1;
-	}
-	
+	} // end insert()
+
 	public int update(Test04ScoreVO vo) {
 		System.out.println("int update(Test04ScoreVO vo) ------------");
-		return 1;
-	}
-	
+		return 10;
+	} // end update()
+
 	public int delete(Test04ScoreVO vo) {
 		System.out.println("int delete(Test04ScoreVO vo) ------------");
-		return 1;
-	}
-	
+		return 100;
+	} // end delete()
+
 	public Test04ScoreVO select(Test04ScoreVO vo) {
 		System.out.println("Test04ScoreVO select(Test04ScoreVO vo) ------------");
-		Test04ScoreVO v = vo;
-		return v;
-	}
-	
+		Test04ScoreVO voo = new Test04ScoreVO();
+		return voo;
+	} // end select()
+
 	public Test04ScoreVO[] selectAll() {
 		System.out.println("Test04ScoreVO[] selectAll() ------------");
-		Test04ScoreVO[] vos = new Test04ScoreVO[3];
-		Test04ScoreVO vo1 = new Test04ScoreVO(111, 99, 77);
-		vos[0] = vo1;
-		vo1 = new Test04ScoreVO(222, 88, 66);
-		vos[1] = vo1;
-		vo1 = new Test04ScoreVO(333, 66, 99);
-		vos[2] = vo1;
-		
+		Test04ScoreVO[] vos = new Test04ScoreVO[10];
+		for (int i = 0; i < vos.length; i++) {
+			Test04ScoreVO vo = new Test04ScoreVO();
+//			vo.num = i + 1;
+			vo.setNum(i + 1);
+//			vo.kor = i * 10;
+			vo.setKor(i * 10);
+//			vo.eng = 90 - i;
+			vo.setEng(90 - i);
+//			vo.total = vo.kor + vo.eng;
+			vo.setTotal(vo.getKor() + vo.getEng());
+//			vo.avg = vo.total/2.0;
+			vo.setAvg(vo.getTotal() / 2.0);
+			vos[i] = vo;
+		}
 		return vos;
-	}
-	
-	public Test04ScoreVO[] searchList(String key, String value) {
+	} // end selectAll()
+
+	public Test04ScoreVO[] searchList(String SearchKey, String SearchWord) {
 		System.out.println("Test04ScoreVO[] searchList(String key, String value ------------");
-		System.out.println("Key : " + key + "   Value : " + value);
+		System.out.println("Key : " + SearchKey + "   Value : " + SearchWord);
 		System.out.println();
-		
-		Test04ScoreVO[] vos = new Test04ScoreVO[3];
-		Test04ScoreVO vo1 = new Test04ScoreVO(444, 55, 88);
-		vos[0] = vo1;
-		vo1 = new Test04ScoreVO(555, 77, 66);
-		vos[1] = vo1;
-		vo1 = new Test04ScoreVO(666, 88, 99);
-		vos[2] = vo1;
-		
+
+		Test04ScoreVO[] vos = new Test04ScoreVO[10];
+		for (int i = 0; i < vos.length; i++) {
+			Test04ScoreVO vo = new Test04ScoreVO();
+//			vo.num = i + 1;
+			vo.setNum(i + 1);
+//			vo.kor = (i * 4) + 60;
+			vo.setKor(i * 10);
+//			vo.eng = 80 - (i * 7);
+			vo.setEng(90 - i);
+//			vo.total = vo.kor + vo.eng;
+			vo.setTotal(vo.getKor() + vo.getEng());
+//			vo.avg = vo.total/2.0;
+			vo.setAvg(vo.getTotal() / 2.0);
+			vos[i] = vo;
+		}
+
 		return vos;
-	}
-	
-	
-	
-}
+	} // end searchList()
+
+} // end class
