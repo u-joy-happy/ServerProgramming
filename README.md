@@ -8,15 +8,15 @@ _매일 **Pull Requests** 갱신_
 ----------
 ### HTML Tag Document
 
-##### - whatwg   
+#### - whatwg   
 https://html.spec.whatwg.org/multipage/   
 -> html tag가 정리되어 있는 사이트
    
-##### - w3cshools   
+#### - w3cshools   
 https://www.w3schools.com/   
 -> html, css 외에도 SQL, Python 공부에 좋음   
    
-##### - REPL   
+#### - REPL   
 Chrome > console 창과 같이 한줄씩 실행시키는 셸 환경   
 python 과 같은 인터프리터 언어도 이 환경에 해당 됨   
 <br>
@@ -26,7 +26,7 @@ python 과 같은 인터프리터 언어도 이 환경에 해당 됨
 ----------
 ### Learn JS Basic
 
-##### - console.log() 출력에 대한 잘못된 생각   
+#### - console.log() 출력에 대한 잘못된 생각   
 1. html script태그를 이용하여 console에 로그를 출력한다.   
 2. innerText속성을 이용하여 값을 변경해준다.   
 3. 그리고 콘솔의 내용을 확인한다.
@@ -229,4 +229,118 @@ System.out.println(css[0][5]);
 
 #### - Class Diagram
 강의자료 참고
+
+<br>
+<br>
+
+2021-02-22
+----------
+### Java Programming 
+#### - 정형화 된 Object Naming
+-> VO(Value Object) : 정보를 담는 객체   
+-> DTO(Data Transfer Object) : 데이터를 전달하는 객체   
+-> DAO(Database Access Object) : 데이터베이스에 접근하는 기능을 담는 객체   
+
+#### - 객체 속성 접근 : setter()/getter()
+-> 객체 내 속성의 정보가 중요한 정보일 경우 은닉(private)한다.   
++) 은닉을 하는 순간 기존에 객체를 통해 속성을 접근하던 코드들은 사용불가  
+-> 은닉 된 속성을 사용하기 위해 public method(setter()/getter())를 정의하여 사용 할 수 있도록 한다(캡슐화).   
+
+#### - String Object concat()과 +의 차이점
+```
+String str = "aaa";
+System.out.println(str.concat("bbb")); //aaabbb
+System.out.println(str); //aaa
+```
+-> concat()은 문자를 연결하여 출력하는 것이 가능하지만    
+-> +는 완전히 문자를 합치는 것   
+
++) **같은 기능을 하는 코드는 아래** : 재할당을 해줘야함      
+```
+String str1 = "aaa";
+str1 = str.concat("bbb");
+
+String str2 = "aaa";
+str2 += "bbb";
+```
+
+#### - String Object endsWith() 와 startsWith()
+-> 시작하거나 끝나는 문자열 비교   
+-> 대상의 문자열이 기존의 문자열에서 끝나거나 시작하는 값인지 확인   
+```
+String str = "http://kireii333.blog.me/java.png";
+System.out.println(str.endsWith(".png"));
+System.out.println(str.startsWith("http")); 
+```
+
+#### - String Object Method 사용시 주의점
+-> 재할당을 하지 않으면 값이 바뀌는 것이 아니다.     
+-> 예시    
+```
+str = "hello/im/student/and/you";
+System.out.println(str.replace("/", "&")); //hello&im&student&and&you
+System.out.println(str); //hello/im/student/and/you
+```
+
+#### - String Object split() 와 StringTokenizer
+-> 대상 문자를 기준으로 구분하여 배열로 반환    
+-> 대상 문자가 연속되어있는 경우 빈 값이 출력 됨    
+-> 또한, 구분자에 따라서 원하는 결과값이 나오지 않는 경우가 있음
+-> StringTokenizer로 개선 가능 
+```
+str = "aaa:bbb::cccc:dd:";
+System.out.println(str.split(":").length); //5
+for (String x : str.split(":")) {
+	System.out.println(x);
+}
+```
+```
+int cnt = 0;
+StringTokenizer st = new StringTokenizer(str, "|");
+while(st.hasMoreElements()) {
+   System.out.println(st.nextElement());
+   cnt ++;
+}
+System.out.println("개수 : " + cnt);
+```
+#### - 비효율적인 문자 할당 
+-> 복합 할당 연산(+=, -= 등)은 연산 속도가 느리다.   
+```
+String txt = "";
+for(int i = 0; i < 100000; i++) {
+	txt += "kim";
+}
+// (처리 시간이 3초 정도 걸리는 코드)
+```
+-> 그렇기 때문에 효율적인 코드를 위해서 StringBuilder(StringBuffer)를 사용한다.   
+```
+StringBuilder sb = new StringBuilder();
+for(int i = 0; i < 100000; i++) {
+   sb.append("kim");
+}
+(처리 시간이 7미리세컨드 정도 걸리는 코드)
+```
+
+#### - Singleton Pattern 
+-> 애플리케이션이 시작될 때 어떤 클래스가 최초 한번만 메모리를 할당(static)   
+-> 그 메모리에 인스턴스를 만들어 사용하는 패턴    
+-> 생성자가 여러 차례 호출되더라도 실제로 생성되는 객체는 하나   
+-> 최초 생성 이후에 호출된 생성자는 최초에 생성한 객체를 반환   
+-> _(자바에선 생성자를 private로 선언해서 생성 불가하게 하고 getInstance()로 받아쓰기도 함)_    
+출처: https://jeong-pro.tistory.com/86 [기본기를 쌓는 정아마추어 코딩블로그]     
+
+-> 프로그램 시작부터 끝날 때 까지 한 객체에 대해 한 주소만 사용하는 것 (?)   
+
+#### - Overriding 요건
+-> 반환타입,    
+-> 매개변수(타입, 개수, 순서),    
+-> 메서드이름   
+이 같아야함   
++) 어노테이션(@Override)를 명시해 줄 경우, 요건에 위반될 시 알려줌
+
+#### - final KeyWord
+- field : 값 대입(값 변경) 불가
+- method : Override(메서드 제정의) 불가
+- class : extends(상속) 불가
+
 
