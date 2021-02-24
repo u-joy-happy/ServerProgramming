@@ -233,7 +233,7 @@ System.out.println(css[0][5]);
 <br>
 <br>
 
-2021-02-22
+2021-02-23
 ----------
 ### Java Programming 
 #### - 정형화 된 Object Naming
@@ -343,4 +343,24 @@ for(int i = 0; i < 100000; i++) {
 - method : Override(메서드 제정의) 불가
 - class : extends(상속) 불가
 
+
+
+<br>
+<br>
+
+2021-02-23
+----------
+### Java Programming 
+#### - printStackTrace()에 대한 잘못된 생각
+-> 에외가 발생하여 콘솔창에 출력되는 것과 같은 형태를 띄고 있다.   
+-> catch문 안에서 printStackTrace()가 실행될 시,   
+-> printStackTrace()는 에러 사항이 콘솔에 출력되고 다음줄이 계속 이어나가진다.   
+
+#### - eclipse ShortCut
+command + shift + o   
+-> 없는 import 자동 생성 및 사용하지 않는 import 정리   
+command + shift + f   
+-> 자동 줄 정렬   
+command + 1   
+-> Quick Fix   
 
