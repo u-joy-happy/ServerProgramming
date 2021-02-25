@@ -348,7 +348,7 @@ for(int i = 0; i < 100000; i++) {
 <br>
 <br>
 
-2021-02-23
+2021-02-24
 ----------
 ### Java Programming 
 #### - printStackTrace()에 대한 잘못된 생각
@@ -364,3 +364,85 @@ command + shift + f
 command + 1   
 -> Quick Fix   
 
+
+<br>
+<br>
+
+2021-02-25
+----------
+### Java Programming 
+#### - ArrayList Value DataType
+```
+List list3 = new ArrayList();
+list3.add(1000);
+list3.add("String");
+list3.add(true);
+list3.add(new int[4]);
+```
+-> ArrayList를 선언할 때 값에 대한 데이터 타입을 선언 하지 않을 경우    
+-> (제네릭을 명시하지 않을 경우)    
+-> 모든 타입을 허용한다.   
+-> 하지만 비효율적   
+
+#### - UnsupportedOperationException    
+-> Collection List를 생성할 때    
+-> new ArrayList<>() or new List<>() 를 사용하지 않고   
+-> List.of(value)를 사용할 수 있다.
+-> 하지만 List.of()를 사용하여 배열을 생성할 경우   
+-> 데이터에 접근(수정) 불가능 하여, 수정하려하면   
+-> **UnsupportedOperationException** 이 발생한다.   
++) _List.of()의 return value는 List<> 이다._
+
+#### - Random Number
+_조건 : 범위가 1~45인 랜덤 수 뽑기_  
++ **방법 1.**
+```
+Random ran = new Random();
+int i = ran.nextInt(45)+1;
+```
++ **방법 2.**
+```
+int i = (int) (Math.random() * 45) + 1;
+```
+### JDBC
+#### - oracle database 11g install
+-> docker를 통한 설치
+```
+$ docker search oracle-xe-11g
+$ docker pull jaspeen/oracle-xe-11g
+
+$ docker run --name oracle11g -d -p 8080:8080 -p 1521:1521 jaspeen/oracle-xe-11g
+$ docker exec -it oracle11g sqlplus
+
+ // (default) id : system / pw : oracle
+```
+#### - SQL Developer 실행 : terminal
+```
+$ cd /Applications/SQLDeveloper.app/Contents/resources/sqldeveloper
+$ zsh sqldeveloper.sh
+```
+#### - SQL
+##### Check User Name
+```
+SQL> show user;
+```
+##### Create User
+```
+SQL> create user java(username) identified by hi123456(userpw) account unlock;
+```
+##### 테이블 생성 권한, 접속 권한 주기 
+```
+SQL> grant connect,resource to java(username); 
+```
+##### 다른 계정에 접속
+```
+SQL> conn java(username);
+```
+##### Create Table
+```
+SQL> create table test(
+num number,
+name varchar(20),
+age number
+);
+```
