@@ -1,0 +1,9 @@
+create table member(
+num number primary key,
+id varchar(20) not null,
+pw varchar(20) not null,
+name varchar(20) not null,
+tel varchar(20)
+);
+
+create sequence seq_member;
