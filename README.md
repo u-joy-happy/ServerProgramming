@@ -411,7 +411,7 @@ int i = (int) (Math.random() * 45) + 1;
 $ docker search oracle-xe-11g
 $ docker pull jaspeen/oracle-xe-11g
 
-$ docker run --name oracle11g -d -p 8080:8080 -p 1521:1521 jaspeen/oracle-xe-11g
+$ docker run --name oracle11g -d -p 8080:8080 -p 1521:1521 -v /Users/kimhyoju/oracle jaspeen/oracle-xe-11g
 $ docker exec -it oracle11g sqlplus
 
  // (default) id : system / pw : oracle
@@ -422,27 +422,72 @@ $ cd /Applications/SQLDeveloper.app/Contents/resources/sqldeveloper
 $ zsh sqldeveloper.sh
 ```
 #### - SQL
-##### Check User Name
++ ##### Check User Name
 ```
 SQL> show user;
 ```
-##### Create User
++ ##### Create User
 ```
 SQL> create user java(username) identified by hi123456(userpw) account unlock;
 ```
-##### 테이블 생성 권한, 접속 권한 주기 
++ ##### 테이블 생성 권한, 접속 권한 주기 
 ```
 SQL> grant connect,resource to java(username); 
 ```
-##### 다른 계정에 접속
++ ##### 다른 계정에 접속
 ```
 SQL> conn java(username);
 ```
-##### Create Table
++ ##### Test Table structure
 ```
 SQL> create table test(
-num number,
-name varchar(20),
+num number primary key,
+name varchar(20) not null,
 age number
 );
+```
+
+<br>
+<br>
+
+2021-02-26
+----------   
+### Java Programming    
+
+#### - docker Restart   
+```
+$ docker start oracle11g
+$ docker exec -it oracle11g sqlplus
+```
+
+#### - docker 실행 문제 : 정보 유실됨
+```
+// docker: Error response from daemon: Conflict. The container name "/oracle11g" is already in use by container "1cc23ec72a37ffe2321453427318354fdbe423609ce48b6dcefad3c087baa373". You have to remove (or rename) that container to be able to reuse that name.
+```
+에러 출력 시 `docker rm (containerName)`을 입력하고    
+다시 `docker run --name oracle11g -d -p 8080:8080 -p 1521:1521 -v /Users/kimhyoju/oracle jaspeen/oracle-xe-11g` 입력하여 container 등록 후 재 실행   
++) running 일 경우 `docker stop oracle11g` 먼저 수행   
+
+#### - java oracle 연동시 SQL 문 오류
+-> sql문 입력 시, ;은 추가 하지 않도록 주의    
+
+#### - SQL
++ ##### Select All Tablees
+```
+SQL> select * from tab
+```
++ ##### Rollback / Commit
+-> insert시 commit 전으로 되돌릴경우 (transaction 할 경우) rollback 입력   
+```
+SQL> rollback ;
+
+SQL> commit; 		 // 방법 1
+SQL> select * from test; // 방법 2
+```
++ ##### oracle sequence
+-> 자동 번호 부여기능 (MySQL : auto_increment)   
+```
+SQL> create sequence seq_test;	//생성
+SQL> drop sequence seq_test;	//삭제
+SQL> insert into test values(seq_test.nextval, 'kim', 33);
 ```
