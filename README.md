@@ -491,3 +491,18 @@ SQL> create sequence seq_test;	//생성
 SQL> drop sequence seq_test;	//삭제
 SQL> insert into test values(seq_test.nextval, 'kim', 33);
 ```
+
+<br>
+<br>
+
+2021-03-02
+----------   
+### Oracle JDBC
+#### - Error
+SQL> conn iot
+Enter password: 
+ERROR:
+ORA-01045: user IOT lacks CREATE SESSION privilege; logon denied
+
+Warning: You are no longer connected to ORACLE.
+-> 해결 방법 : grant connect to iot;
