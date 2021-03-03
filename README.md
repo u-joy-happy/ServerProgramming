@@ -506,3 +506,24 @@ ORA-01045: user IOT lacks CREATE SESSION privilege; logon denied
 
 Warning: You are no longer connected to ORACLE.
 -> 해결 방법 : grant connect to iot;
+
+
+<br>
+<br>
+
+2021-03-03
+----------   
+### Oracle JDBC
+#### - Like 
+```
+SQL> select * from table where date like '%12_%';   
+
+// \_underbar는 한글자를 의미한다.   
+이것은 반드시 한글자가 있어야된다는 뜻으로 12일은 해당할 수 없음 (12로 끝나는 겂은 나올 수 없음)   
+```
+
+#### - oracle SQL 용어
+-> DDL : create, drop, alter, truncate   
+-> DQL : select   
+-> DML : insert, update, delete   
+-> TCL : commit, rollback, savepoint   
