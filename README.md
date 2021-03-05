@@ -527,3 +527,12 @@ SQL> select * from table where date like '%12_%';
 -> DQL : select   
 -> DML : insert, update, delete   
 -> TCL : commit, rollback, savepoint   
+
+
+<br>
+<br>
+
+2021-03-05
+----------   
+### JSP
+
