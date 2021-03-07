@@ -1,6 +1,5 @@
 # ServerProgramming
 KOSTA Education :ServerProgramming   
-_매일 **Pull Requests** 갱신_
 
 <br>
 
