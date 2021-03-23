@@ -531,7 +531,3 @@ SQL> select * from table where date like '%12_%';
 <br>
 <br>
 
-2021-03-05
-----------   
-### JSP
-
